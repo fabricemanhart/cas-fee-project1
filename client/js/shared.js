@@ -1,5 +1,8 @@
-﻿export function formatDate(dateString) {
-    if (!dateString) {
+﻿export function formatDate(dateString, handleAnytime) {
+    if (handleAnytime && dateString === "any time")
+        return "any time";
+
+    if (!dateString || dateString === "any time") {
         return null;
     }
 
@@ -9,6 +12,10 @@
 }
 
 export function normalizeDate(date) {
+
+    if (!date) {
+        return "any time";
+    }
 
     if (!moment(date, "DD.MM.YYYY", true).isValid()) {
         return null;

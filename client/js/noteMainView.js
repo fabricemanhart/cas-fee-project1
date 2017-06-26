@@ -28,7 +28,7 @@ export class NoteMainView {
         // Format Dates Moment.js???
         for (let i = 0, len = this.notes.length; i < len; i++) {
             this.notes[i].creationDate = formatDate(this.notes[i].creationDate);
-            this.notes[i].dueDate = formatDate(this.notes[i].dueDate);
+            this.notes[i].dueDate = formatDate(this.notes[i].dueDate, true);
             this.notes[i].completionDate = formatDate(this.notes[i].completionDate);
         }
 
