@@ -9,13 +9,13 @@
                 title: "Test Title",
                 description: "Test text Test text Test text Test text Test text",
                 importance: this.getRandomNumber(0, 5),
-                dueDate: this.getRandomDate(2017, 2018).toISOString().slice(0, 10),
-                creationDate: this.getRandomDate(2017, 2017),
+                dueDate: moment(this.getRandomDate(2017, 2018)).utc(),
+                creationDate: moment(this.getRandomDate(2017, 2017)).utc(),
                 completionDate: null
             }
 
             if (this.isCompleted()) {
-                note.completionDate = this.getRandomDate(2018, 2018);
+                note.completionDate = moment(this.getRandomDate(2018, 2018)).utc();
                 note.completed = true;
             }
 

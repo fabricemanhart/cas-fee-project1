@@ -1,4 +1,5 @@
 ﻿import { formatDate } from "./shared.js"
+import { normalizeDate } from "./shared.js"
 
 
 const dom = {
@@ -29,7 +30,7 @@ export class NoteDetailView {
         document.getElementById("title").value = this.note.title || "";
         document.getElementById("description").value = this.note.description || "";
         document.getElementById("importance").value = this.note.importance || "0";
-        document.getElementById("duedate").value = this.note.dueDate || "";
+        document.getElementById("duedate").value = formatDate(this.note.dueDate) || "";
     }
 
     setTitleAndButtonText() {
@@ -56,8 +57,8 @@ export class NoteDetailView {
             description: document.getElementById("description").value,
             importance: selector[selector.selectedIndex].value,
             completed: false,
-            dueDate: document.getElementById("duedate").value,
-            creationDate: Date.now(), // or update date
+            dueDate: normalizeDate(document.getElementById("duedate").value),
+            creationDate: moment.utc(), // or update date
             completionDate: null
         }
     }

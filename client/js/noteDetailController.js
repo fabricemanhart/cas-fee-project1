@@ -35,8 +35,11 @@ export class NoteDetailController {
             let id = this._view.getNoteId();
             this._model
                 .saveOrUpdate(id, note)
-                .then(this.showNotification.bind(this));
-        }
+                .then(note => {
+                    this.showNotification.bind(this);
+                    this._view.hideAllValidationErrorMessages();
+                });
+        };
     }
 
     generateNotes() {
@@ -45,9 +48,9 @@ export class NoteDetailController {
 
         for (let i = 0, len = notes.length; i < len; i++) {
             this._model
-                .saveOrUpdate(notes[i])
+                .saveOrUpdate(null, notes[i])
                 .then(this.showNotification.bind(this));
-        }   
+        }
     }
 
     showNotification() {

@@ -46,7 +46,7 @@ export class NoteModel extends Observable {
         this._storage.getById(id)
             .then(note => {
                 note.completed = true;
-                note.completionDate = Date.now();
+                note.completionDate = moment.utc();
                 this._storage.update(id, note);
                 this.sortAndFilter();
             });
@@ -119,22 +119,11 @@ export class NoteModel extends Observable {
             modelvalidationResult.descriptionMsg = "Please set a description";
         }
 
-        if (!note.dueDate && isDateValid(note.dueDate)) {
+        if (!note.dueDate) {
             modelvalidationResult.isModelValid = false;
-            modelvalidationResult.dueDateMsg = "Please set a valid date";
+            modelvalidationResult.dueDateMsg = "Please set a valid date (expected format: dd.mm.yyyy)";
         }
 
         return modelvalidationResult;
-    }
-
-    isDateValid(date) {
-        let parsedDate = moment(date); // Chrome Datepicker
-        if (!parsedDate.isValid()) {
-            let parsedDate = moment(date, "DD.MM.YY"); // FireFox input field
-            if (!parsedDate.isValid()) { 
-                return false;
-            }
-        }
-        return true;
     }
 }
