@@ -48,3 +48,17 @@ export function getUrlParameter(parameter) {
     }
     return null;
 }
+
+export function changeTheme(event) {
+    var dropdown = event.currentTarget;
+    var css = dropdown.options[dropdown.selectedIndex].value;
+    document.cookie = `theme=${css}`;
+    setTheme();
+}
+
+export function setTheme(dropdown) {
+    let defaultCss = "css/simple.css";
+    let css = document.cookie.split('=')[1];
+    document.getElementById("style").setAttribute("href", css || defaultCss);
+    dropdown.value = css || defaultCss;
+}

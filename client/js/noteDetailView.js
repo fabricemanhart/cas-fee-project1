@@ -5,7 +5,8 @@ import { normalizeDate } from "./shared.js"
 const dom = {
     saveButton: document.getElementById("saveButton"),
     generatorButton: document.getElementById("generatorButton"),
-    noteAmount: document.getElementById("noteAmount")
+    noteAmount: document.getElementById("noteAmount"),
+    themeDropdown: document.getElementById("themeDropdown")
 }
 
 export class NoteDetailView {

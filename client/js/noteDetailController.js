@@ -1,4 +1,6 @@
 ﻿import { getUrlParameter } from "./shared.js"
+import { setTheme } from "./shared.js"
+import { changeTheme } from "./shared.js"
 import { NotesGenerator } from "./notesGenerator.js";
 
 export class NoteDetailController {
@@ -8,11 +10,13 @@ export class NoteDetailController {
         this._view = view;
 
         this._model.addObserver(this._view);
-
         this._dom = this._view.getDOM();
+
         this.registerHandlerOnDomElements();
+        setTheme(this._dom.themeDropdown);
 
         let id = getUrlParameter("id");
+
         if (id) {
             this._model.getNoteById(id);
         }
@@ -23,6 +27,7 @@ export class NoteDetailController {
     registerHandlerOnDomElements() {
         this._dom.saveButton.addEventListener("click", this.save.bind(this));
         this._dom.generatorButton.addEventListener("click", this.generateNotes.bind(this));
+        this._dom.themeDropdown.addEventListener("change", changeTheme.bind(this));
     }
 
     save() {
@@ -36,7 +41,7 @@ export class NoteDetailController {
             this._model
                 .saveOrUpdate(id, note)
                 .then(note => {
-                    this.showNotification.bind(this);
+                    this.showNotification();
                     this._view.hideAllValidationErrorMessages();
                 });
         };

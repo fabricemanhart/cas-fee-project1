@@ -29,7 +29,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="client\css\app.css" />
+    <Content Include="client\css\simple.css" />
+    <Content Include="client\css\fancy.css" />
     <Content Include="client\detail.html" />
     <Content Include="client\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="client\font-awesome-4.7.0\css\font-awesome.min.css" />

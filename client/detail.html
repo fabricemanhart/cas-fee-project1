@@ -5,17 +5,17 @@
     <title>Note Detail</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
+    <link id="style" href="css/simple.css" rel="stylesheet">
     <script type="module" src="js/noteDetail.js">    </script>
     <script language="javascript" type="text/javascript" src="js/moment-with-locales.js"></script>
 </head>
 <body>
     <header>
         <a class="application-title" href="note.html">Note Pro</a>
-        <form action="/" method="post">
-            <select class="select-field">
-                <option value="simpleTheme">Simple Theme</option>
-                <option value="fancyTheme">Fancy Theme</option>
+        <form>
+            <select id="themeDropdown" class="select-field">
+                <option value="css/simple.css">Simple Theme</option>
+                <option value="css/fancy.css">Fancy Theme</option>
             </select>
         </form>
     </header>

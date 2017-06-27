@@ -4,7 +4,8 @@ const dom = {
     completeButtons: document.getElementsByClassName("js-complete-btn"),
     undoneButtons: document.getElementsByClassName("js-undone-btn"),
     includingCompletedCheckBox: () => document.getElementById("includingCompleted"),
-    sortCriteriaDropDown: () => document.getElementById("sorting")
+    sortCriteriaDropDown: () => document.getElementById("sorting"),
+    themeDropdown: document.getElementById("themeDropdown")
 }
 
 export class NoteMainView {
