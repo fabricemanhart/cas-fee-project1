@@ -13,7 +13,6 @@ export class NoteModel extends Observable {
     }
 
     sortAndFilter() {
-        // todo chain function calls;
         this._storage
             .getAll()
             .then(notes => {
