@@ -4,4 +4,4 @@
 - Gemäss Absprache mit Michael sollen die handlebars und moment Scripts global im HTML Header/Footer gesetzten werden (da import dieser Module nicht unterstützt wird).
 - Anzahl beliebiger Notes können auf der "Add/Edit Notes" Seite automatisch erzeugt werden.
 - Der Client ist unter http://localhost:3001/ erreichbar (app.js mit node starten: "node app.js"). Um die Funktionalität der serverseitigen Web-API zu nutzen, muss auf der Client über den Web Server aufgerufen werden (nicht über das Filesystem).
-- Standardmässig wird die Persistierung in der nedb über das Web API gemacht. Falls das Browser Feature localStorage verwendet werden soll, muss der "NoteLocalStorage" einkommentiert und der "NoteService" auskommentiert werden (in den Files: client\js\noteMain.js und client\js\noteDetail.js). Beide Files verwenden die gleichen Methoden Signaturen, sodass nichts mehr weiter angepasst werden muss. 
+- Standardmässig wird die Persistierung in der nedb über das Web API gemacht.

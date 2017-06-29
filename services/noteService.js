@@ -31,9 +31,13 @@ function getAll(callback) {
 }
 
 function renameId(note) {
-    note.id = note._id;
-    delete note._id;
-    return note;
+    if (note) {
+        note.id = note._id;
+        delete note._id;
+        return note;
+    }
+
+    return {};
 }
 
 module.exports = { save: save, update: update, getById: getById, getAll: getAll };

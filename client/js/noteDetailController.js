@@ -17,9 +17,7 @@ export class NoteDetailController {
 
         let id = getUrlParameter("id");
 
-        if (id) {
-            this._model.getNoteById(id);
-        }
+        this._model.getNoteById(id);
 
         this.generator = new NotesGenerator();
     }
