@@ -7,6 +7,7 @@
     }
 
     var date = new Date(dateString);
+    return moment(dateString).format("DD.MM.YYYY");
     var options = { year: "numeric", month: "numeric", day: "numeric" };
     return date.toLocaleDateString("de-DE", options);
 }

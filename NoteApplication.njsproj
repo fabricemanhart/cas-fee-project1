@@ -69,7 +69,7 @@
     <Content Include="client\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="client\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="client\font-awesome-4.7.0\scss\_variables.scss" />
-    <Content Include="client\note.html" />
+    <Content Include="client\index.html" />
     <Content Include="data\note.db" />
     <Content Include="package.json" />
     <Content Include="README.md" />
